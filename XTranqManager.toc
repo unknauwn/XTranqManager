@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: |cfffbb034 Xckbucl|cffffffffTranq v2.2
+## Author: Xckbucl, 2016
+## Version: 2.2
+## Notes: Easy Tranq Announce & /w if success or fail & more! Made by Xckbucl from Elysium PvP & Kronos II
+## SavedVariables: XckbuclTranqSettings,XckbuclTanqRotationPlayer,XckbuclTranqEnable,XckbuclTranqWhispers,XckbuclTranqCustomMsgHit,XckbuclTranqCustomMsgWHit,XckbuclTranqCustomMsgMiss,XckbuclTranqCustomMsgWMiss
+XTranqManager.lua
+XTranqManagerConf.lua
+XTranqManagerUI.xml
