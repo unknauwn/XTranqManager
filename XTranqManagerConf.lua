@@ -1,45 +1,13 @@
-﻿local ranks = {
-	{0,      0,      0,     0},
-	{2539,   910,    1000,  400},
-	{5231,   2539,   2000,  1000},
-	{9221,   5231,   3000,  2000},
-	{15491,  9221,   4000,  3000},
-	{23369,  15491,  5000,  4000},
-	{36958,  23369,  6000,  5000},
-	{54408,  36958,  7000,  6000},
-	{76316,  54408,  8000,  7000},
-	{120420, 76316,  9000,  8000},
-	{164960, 120420, 10000, 9000},
-	{226508, 164960, 11000, 10000},
-	{315119, 226508, 12000, 11000},
-	{431492, 315119, 13000, 12000},
-}
-
-local p = function() local x = (math.floor(GetPVPRankProgress(target)*10000))/100 return x end
-local c = function() local x = (UnitPVPRank'player' - 6)*5000 + 5000*p()/100 if x == -30000 then x = 0 end return x end
-local n = function() local x = (UnitPVPRank'player' - 5)*5000 - c()*.8 if x == -25000 then x = '15 HK' end return x end
-
-local g = function()
-	local _, cp = GetPVPThisWeekStats()
-	local _, i  = GetPVPRankInfo(UnitPVPRank'player')
-	local cp_hi = ranks[i + 1][1] local cp_lo = ranks[i + 1][2]
-	local rp_hi = ranks[i + 1][3] local rp_lo = ranks[i + 1][4]
-	x = math.floor((cp - cp_lo)/(cp_hi - cp_lo)*(rp_hi - rp_lo) + rp_lo)
-	if isNAN(x) then return 0 else return x end
-end
-
-
---Configuration du Menu en jeu
+﻿--Configuration du Menu en jeu
 SLASH_XTA1, SLASH_XTA2 = "/xcktranq", "/xtranq"
 SlashCmdList["XTA"] = function(message)
 	local cmd = { }
-	for c in string.gfind(message, "[^ ]+") do
+	for c in string.gmatch(message, "[^ ]+") do
 		table.insert(cmd, string.lower(c))
 	end
 	if cmd[1] == "config" then
 		XTranqManagerUI:Show();
-		elseif cmd[1] == "pvp" then
-		SendChatMessage('— PvP Rank: ['..(UnitPVPRank'player' - 4)..'] '..'Progress: ['..p()..'%] '..'Current RP: ['..c()..'] RP to next rank: ['..n()..'].', 'emote')
+		DEFAULT_CHAT_FRAME:AddMessage("|cfffbb034<|r|cffead454Xckbucl Tranquilizing Shot Manager|r Made by Xckbucl on K2/LH/Sulfuron Classic|cffead454 Settings")
 		elseif cmd[1] == "switch" then
 		SwitchRanged();
 		else
@@ -63,7 +31,7 @@ end
 
 ------AFFICHAGE MESSAGE ADDON
 function DefautMsg()
-	DEFAULT_CHAT_FRAME:AddMessage("|cfffbb034<|r|cffead454Xckbucl Tranquilizing Shot Manager|r Made by Xckbucl on K2")
+	DEFAULT_CHAT_FRAME:AddMessage("|cfffbb034<|r|cffead454Xckbucl Tranquilizing Shot Manager|r Made by Xckbucl on K2/LH/Sulfuron Classic")
 	DEFAULT_CHAT_FRAME:AddMessage("|cfffbb034<|rAvailable Commands|r|cfffbb034>")
 	DEFAULT_CHAT_FRAME:AddMessage("UI Config Menu |cff49C0C0/xtranq config|r || |cff49C0C0/xcktranq config|r || |cff49C0C0/xtranq")
 	DEFAULT_CHAT_FRAME:AddMessage("|cfffbb034<|rActual Settings|r|cfffbb034>")

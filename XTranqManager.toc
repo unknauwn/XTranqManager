@@ -1,8 +1,8 @@
-## Interface: 11200
-## Title: |cfffbb034 Xckbucl|cffffffffTranq v2.2
-## Author: Xckbucl, 2016
-## Version: 2.2
-## Notes: Easy Tranq Announce & /w if success or fail & more! Made by Xckbucl from Elysium PvP & Kronos II
+## Interface: 11303
+## Title: |cfffbb034 Xckbucl|cffffffffTranq v3.0 - Classic
+## Author: Xckbucl, 2019
+## Version: 3.0
+## Notes: Easy Tranq Announce & /w if success or fail & more! Made by Xckbucl from Elysium PvP, Kronos II & Sulfuron Classic
 ## SavedVariables: XckbuclTranqSettings,XckbuclTanqRotationPlayer,XckbuclTranqEnable,XckbuclTranqWhispers,XckbuclTranqCustomMsgHit,XckbuclTranqCustomMsgWHit,XckbuclTranqCustomMsgMiss,XckbuclTranqCustomMsgWMiss
 XTranqManager.lua
 XTranqManagerConf.lua
